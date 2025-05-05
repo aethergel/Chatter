@@ -10,7 +10,7 @@
 //    this list of conditions and the following disclaimer in the documentation
 //    and/or other materials provided with the distribution.
 // 
-// THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS “AS IS”
+// THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
 // AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
 // IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
 // ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE
@@ -47,6 +47,6 @@ public class AllChatLog(
     {
         var instant = when.ToInstant();
         var pattern = InstantPattern.ExtendedIso;
-        return pattern.Format(instant);
+        return when.ToString(LogConfiguration.DateTimeFormat ?? DateHelper.CultureDateTimePattern.PatternText, null);
     }
 }
